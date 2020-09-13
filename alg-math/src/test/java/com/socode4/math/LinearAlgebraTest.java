@@ -80,4 +80,24 @@ public class LinearAlgebraTest {
         assertArrayEquals(expected, result, 0.01f);
     }
 
+    @Test
+    public void triple() {
+        float[] v1 = new float[]{10, 0, 10, 1};
+        float[] v2 = new float[]{0, 10, 10, 1};
+        float[] v3 = new float[]{10, 10, 0, 1};
+        float[] tmp = new float[]{0, 0, 0, 1};
+        LinearAlgebra.crossV3(v2, v3, tmp);
+        float expected = LinearAlgebra.dotV3(v1, tmp);
+        assertTrue(Math.abs(expected - LinearAlgebra.tripleV3(v1, v2, v3)) < LinearAlgebra.EPS);
+    }
+
+    @Test
+    public void isCollinear() {
+        float[] v1 = new float[]{5, 10, 3, 1};
+        float[] v2 = new float[]{10, 20, 6, 1};
+        assertTrue(LinearAlgebra.isCollinearV3(v1, v2));
+        v2[1] = 40;
+        assertFalse(LinearAlgebra.isCollinearV3(v1, v2));
+    }
+
 }
