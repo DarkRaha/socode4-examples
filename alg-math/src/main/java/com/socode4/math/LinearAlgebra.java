@@ -1,6 +1,5 @@
 package com.socode4.math;
 
-import java.util.Arrays;
 
 public class LinearAlgebra {
 
@@ -341,7 +340,7 @@ public class LinearAlgebra {
     }
 
     /**
-     * After projection operation you can get homogenous coordinate (forth coordinate != 1).
+     * After vector projection you can get homogenous coordinate (forth coordinate != 1).
      *
      * @param v
      */

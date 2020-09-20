@@ -1,5 +1,7 @@
 package com.socode4.math;
 
+import java.util.Arrays;
+
 import static com.socode4.math.LinearAlgebra.*;
 import static java.lang.Math.*;
 
@@ -258,4 +260,10 @@ public class VectorFloat {
         return (int) (signum(direction) * v[1] / v[D] * halfHeightOfScreen + halfHeightOfScreen);
     }
 
+    @Override
+    public String toString() {
+        return "VectorFloat{" +
+                "v=" + Arrays.toString(v) +
+                '}';
+    }
 }
